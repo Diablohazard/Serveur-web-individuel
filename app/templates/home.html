@@ -13,10 +13,19 @@
             letter-spacing: 2px;
             font-family: Arial, sans-serif;
         }
+        .image-full {
+            display: block;
+            width: 100vw;
+            height: calc(100vh - 80px);
+            object-fit: cover;
+            margin: 0;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
     <div class="bandeau">DIABLO</div>
+    <img src="{{ url_for('static', filename='images.jpeg') }}" class="image-full">
     <!-- Contenu principal ici -->
 </body>
 </html>
