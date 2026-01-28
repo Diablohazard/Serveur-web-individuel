@@ -21,7 +21,7 @@
 <div class="bandeau">DIABLO - CONNECTE</div>
 
 <!-- Bouton + formulaire -->
-<form action="{{ url_for('login') }}" method="post">
+<form action="{{ url_for('produit') }}" method="post">
     <p>
         <label>Nom du produit :</label><br>
         <input type="text" name="produit" required>
@@ -36,11 +36,16 @@
 </form>
 
 <!-- Affichage après validation -->
-{% if produit %}
-    <hr>
-    <h2>{{ produit }}</h2>
-    <p>{{ commentaire }}</p>
-{% endif %}
+<hr>
+<h2>Produits ajoutés</h2>
+
+{% for p in produits %}
+    <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+        <h3>{{ p.nom }}</h3>
+        <p>{{ p.commentaire }}</p>
+    </div>
+{% endfor %}
+
 
 </body>
 </html>
