@@ -17,3 +17,9 @@ def register():
     # Exemple : print(username, password) pour debug
     print(f"Nouvel utilisateur : {username}, mot de passe : {password}")
     return redirect(url_for('home'))
+
+@app.route('/login', methods=['GET'])
+def login():
+    username = request.args.get('username')
+    password = request.args.get('password')
+    return render_template('login.html', username=username, password=password)
