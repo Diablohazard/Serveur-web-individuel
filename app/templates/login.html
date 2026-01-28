@@ -6,19 +6,41 @@
     <title>login</title>
     <style>
         .bandeau {
-            background-color: rgba(34, 34, 34, 0.98); /* quasi opaque */
+            background-color: rgba(34, 34, 34, 0.98);
             color: #ff0101;
             padding: 20px;
             text-align: center;
             font-size: 2em;
             letter-spacing: 2px;
             font-family: Arial, sans-serif;
-            position: relative;
-            z-index: 1;
         }
     </style>
 </head>
 <body>
-    <div class="bandeau">DIABLO - CONNECTE</div>
+
+<div class="bandeau">DIABLO - CONNECTE</div>
+
+<!-- Bouton + formulaire -->
+<form action="{{ url_for('login') }}" method="post">
+    <p>
+        <label>Nom du produit :</label><br>
+        <input type="text" name="produit" required>
+    </p>
+
+    <p>
+        <label>Commentaire :</label><br>
+        <textarea name="commentaire" required></textarea>
+    </p>
+
+    <button type="submit">Valider</button>
+</form>
+
+<!-- Affichage après validation -->
+{% if produit %}
+    <hr>
+    <h2>{{ produit }}</h2>
+    <p>{{ commentaire }}</p>
+{% endif %}
+
 </body>
 </html>
