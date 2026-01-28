@@ -26,13 +26,18 @@
     <div style="display:flex;justify-content:center;align-items:center;height:60vh;">
         <form method="post" action="/login" style="background:white;padding:30px 40px;border-radius:8px;min-width:300px;box-shadow:0 2px 10px #0008;position:relative;z-index:10;">
             <h2 style="color:#222;text-align:center;">Connexion</h2>
-            <div style="margin-bottom:15px;">
-                <label for="login_username" style="font-weight:bold;display:block;margin-bottom:5px;">Identifiant :</label>
-                <input type="text" id="login_username" name="username" required style="width:100%;padding:8px 12px;border:1px solid #aaa;border-radius:4px;font-size:1em;">
+            <div style="margin-bottom:15px; display:flex; align-items:center;">
+                <label for="login_username" style="font-weight:bold; width:120px;">Identifiant :</label>
+                <input type="text" id="login_username" name="username" required
+                       placeholder="Entrez votre identifiant"
+                       style="flex:1; padding:8px 12px; border:1px solid #aaa; border-radius:4px; font-size:1em;">
             </div>
-            <div style="margin-bottom:20px;">
-                <label for="login_password" style="font-weight:bold;display:block;margin-bottom:5px;">Mot de passe :</label>
-                <input type="password" id="login_password" name="password" required style="width:100%;padding:8px 12px;border:1px solid #aaa;border-radius:4px;font-size:1em;">
+
+            <div style="margin-bottom:20px; display:flex; align-items:center;">
+                <label for="login_password" style="font-weight:bold; width:120px;">Mot de passe :</label>
+                <input type="password" id="login_password" name="password" required
+                        placeholder="Entrez votre mot de passe"
+                        style="flex:1; padding:8px 12px; border:1px solid #aaa; border-radius:4px; font-size:1em;">
             </div>
             <button type="submit" style="width:100%;padding:10px 0;">Se connecter</button>
         </form>
