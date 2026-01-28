@@ -6,21 +6,20 @@
     <title>Accueil</title>
     <style>
         .bandeau {
-            background-color: #222;
+            background-color: rgba(34, 34, 34, 0.98); /* quasi opaque */
             color: #ff0101;
             padding: 20px;
             text-align: center;
             font-size: 2em;
             letter-spacing: 2px;
             font-family: Arial, sans-serif;
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
     <div class="bandeau">DIABLO</div>
-    <div class="image-container">
-        <img src="{{ url_for('static', filename='images.jpeg') }}" class="image-full">
-    </div>
     <button onclick="document.getElementById('modal').style.display='block'" style="position:absolute;top:30px;left:30px;padding:10px 20px;font-size:1em;">S'inscrire</button>
     <div id="modal" style="display:none;position:fixed;top: 120px;left: 240px;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:1000;justify-content:center;align-items:center;">
         <div style="background:#fff;padding:30px 40px;border-radius:8px;min-width:100px;box-shadow:0 2px 10px #0008;position:relative;">

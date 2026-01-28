@@ -1,9 +1,22 @@
 body {
-    background: black url('images.jpeg') center center no-repeat;
-    background-size: contain; /* ou `cover` si tu veux que l'image remplisse tout l'espace */
+    background: black;
     margin: 0;
     min-height: 100vh;
     color: white;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('images.jpeg') center center no-repeat;
+    background-size: contain;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
 }
 h1 {
     color: white;
