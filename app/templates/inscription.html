@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>inscription</title>
+    <style>
+        .bandeau {
+            background-color: rgba(34, 34, 34, 0.98); /* quasi opaque */
+            color: #ff0101;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            letter-spacing: 2px;
+            font-family: Arial, sans-serif;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="bandeau">DIABLO - INSCRIPTION</div>
+    <div style="display:flex;justify-content:center;align-items:center;height:70vh;">
+        <form method="post" action="/register" style="background:white;padding:30px 40px;border-radius:8px;min-width:300px;box-shadow:0 2px 10px #0008;position:relative;z-index:10;">
+            <h2 style="color:#222;text-align:center;">Inscription</h2>
+            <div style="margin-bottom:15px;display:flex;align-items:center;">
+                <label for="username" style="font-weight:bold;width:120px;text-align:right;margin-right:10px;">Identifiant :</label>
+                <input type="text" id="username" name="username" required style="flex:1;padding:8px 12px;border:1px solid #aaa;border-radius:4px;font-size:1em;">
+            </div>
+            <div style="margin-bottom:20px;display:flex;align-items:center;">
+                <label for="password" style="font-weight:bold;width:120px;text-align:right;margin-right:10px;">Mot de passe :</label>
+                <input type="password" id="password" name="password" required style="flex:1;padding:8px 12px;border:1px solid #aaa;border-radius:4px;font-size:1em;">
+            </div>
+            <button type="submit" style="width:100%;padding:10px 0;">Valider</button>
+        </form>
+    </div>
+</body>
+</html>
