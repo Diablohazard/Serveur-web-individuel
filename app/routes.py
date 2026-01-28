@@ -45,3 +45,29 @@ def produit():
     produits.append({"nom": nom, "commentaire": commentaire})
 
     return render_template('login.html', produits=produits)
+
+@app.route('/produit/edit/<int:index>', methods=['GET'])
+def edit_produit(index):
+    produit = produits[index]
+    return render_template('edit_produit.html', produit=produit, index=index)
+
+@app.route('/produit/update/<int:index>', methods=['POST'])
+def update_produit(index):
+    nom = request.form.get('produit')
+    commentaire = request.form.get('commentaire')
+
+    produits[index]['nom'] = nom
+    produits[index]['commentaire'] = commentaire
+
+    return redirect(url_for('login'))
+
+@app.route('/produit/delete/<int:index>', methods=['POST'])
+def delete_produit(index):
+    if 0 <= index < len(produits):
+        produits.pop(index)
+    return redirect(url_for('login'))
+
+@app.route('/logout')
+def logout():
+    # Pour plus tard, on pourrait supprimer la session
+    return redirect(url_for('home'))

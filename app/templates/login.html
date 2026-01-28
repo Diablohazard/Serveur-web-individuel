@@ -19,6 +19,11 @@
 <body>
 
 <div class="bandeau">DIABLO - CONNECTE</div>
+<div style="text-align:right; margin:10px;">
+    <a href="{{ url_for('logout') }}">
+        <button>Déconnexion</button>
+    </a>
+</div>
 
 <!-- Bouton + formulaire -->
 <form action="{{ url_for('produit') }}" method="post">
@@ -43,9 +48,17 @@
     <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
         <h3>{{ p.nom }}</h3>
         <p>{{ p.commentaire }}</p>
+
+        <!-- Modifier -->
+        <a href="{{ url_for('edit_produit', index=loop.index0) }}">
+            <button>Modifier</button>
+        </a>
+
+        <!-- Supprimer -->
+        <form action="{{ url_for('delete_produit', index=loop.index0) }}" method="post" style="display:inline;">
+            <button type="submit">Supprimer</button>
+        </form>
     </div>
 {% endfor %}
-
-
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier le produit</title>
+</head>
+<body>
+
+<h2>Modifier le produit</h2>
+
+<form action="{{ url_for('update_produit', index=index) }}" method="post">
+    <p>
+        <label>Nom du produit :</label><br>
+        <input type="text" name="produit" value="{{ produit.nom }}" required>
+    </p>
+
+    <p>
+        <label>Commentaire :</label><br>
+        <textarea name="commentaire" required>{{ produit.commentaire }}</textarea>
+    </p>
+
+    <button type="submit">Enregistrer</button>
+</form>
+
+</body>
+</html>
